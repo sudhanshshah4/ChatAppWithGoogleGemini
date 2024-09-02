@@ -67,6 +67,7 @@ class ChatViewModelTest {
         assertEquals(userInput, messages[0].content)
         assertTrue(messages[0].isUser)
     }
+
     @Test
     fun `sendMessage adds bot response to messages flow`() = runTest {
         // Given
