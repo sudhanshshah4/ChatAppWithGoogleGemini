@@ -15,7 +15,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        buildConfigField("String", "GeminiApiKey", "\"AIzaSyDF4zzmwkDrPepkyUQKy2cWQXQ4M_MKvTE\"")
+        buildConfigField("String", "GeminiApiKey", "\"YOUR_GEMINI_API_KEY\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
