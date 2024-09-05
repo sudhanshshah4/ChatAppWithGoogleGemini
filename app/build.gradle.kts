@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -15,7 +15,9 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        buildConfigField("String", "GeminiApiKey", "\"AIzaSyDF4zzmwkDrPepkyUQKy2cWQXQ4M_MKvTE\"")
+        val properties = Properties()
+        properties.load(project.rootProject.file("apikey.properties").inputStream())
+        buildConfigField("String", "GeminiApiKey", properties.getProperty("Gemini_Api_Key"))
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
