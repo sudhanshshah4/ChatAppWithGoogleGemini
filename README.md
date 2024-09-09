@@ -74,7 +74,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Contact**
 If you have any questions, feel free to reach out:
-- **Email**:sudhansh.shah2@gmail.com
+- **Email**: sudhansh.shah2@gmail.com
 - **GitHub**: https://github.com/sudhanshshah4
 
 
