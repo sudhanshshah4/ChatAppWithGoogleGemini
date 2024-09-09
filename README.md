@@ -63,7 +63,7 @@ The project follows Clean Architecture principles, with separation into differen
 **Contributing**
 Contributions are welcome! Please follow these steps:
 
--Fork the repository.
+- Fork the repository.
 - Create a feature branch (git checkout -b feature-branch).
 - Commit your changes (git commit -m 'Add some feature').
 - Push to the branch (git push origin feature-branch).
