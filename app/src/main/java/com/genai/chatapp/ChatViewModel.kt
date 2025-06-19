@@ -1,6 +1,8 @@
 package com.genai.chatapp
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.ai.client.generativeai.GenerativeModel
@@ -14,10 +16,26 @@ import kotlinx.coroutines.launch
 class ChatViewModel() : ViewModel() {
     private val _messages = MutableStateFlow<List<Message>>(emptyList())
     val messages: StateFlow<List<Message>> = _messages
-
-    private val model = GenerativeModel(
+    /**
+     * Using Build Config for API keys
+     */
+    /*private val model = GenerativeModel(
         "gemini-1.5-flash",
         BuildConfig.GeminiApiKey,
+        generationConfig = generationConfig {
+            temperature = 2f
+            topK = 64
+            topP = 0.95f
+            maxOutputTokens = 8192
+            responseMimeType = "text/plain"
+        }
+    )*/
+    /**
+     * Using Java NDK Encryption Technique For API Keys
+     */
+    private val model = GenerativeModel(
+        "gemini-1.5-flash",
+        KeyProvider.getApiKey(),
         generationConfig = generationConfig {
             temperature = 2f
             topK = 64

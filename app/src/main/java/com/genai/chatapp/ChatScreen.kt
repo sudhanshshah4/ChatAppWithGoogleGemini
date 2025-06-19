@@ -1,6 +1,7 @@
 package com.genai.chatapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -38,6 +39,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.genai.chatapp.ui.theme.ChatAppTheme
 
 class ChatScreen : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -120,7 +122,9 @@ class ChatScreen : ComponentActivity() {
                 value = textState,
                 onValueChange = { textState = it },
                 placeholder = { Text("Type a message ${ WindowInsets.isImeVisible}")},
-                modifier = Modifier.weight(1f).imePadding()
+                modifier = Modifier
+                    .weight(1f)
+                    .imePadding()
             )
             Button(
                 onClick = {
